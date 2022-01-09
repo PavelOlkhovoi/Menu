@@ -1,3 +1,5 @@
+let testGlobal = '18 999 9999';
+
 /**
  * 
  * Manipulating the DOM exercise.

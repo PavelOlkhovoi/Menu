@@ -66,17 +66,23 @@ section {
 /* Navigation Styles*/
 .navbar__menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 }
 .navbar__menu ul {
     padding-left: 0;
-    margin: 0;
+    margin: 0px -10px;
     text-align: center;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    flex: 0 1 auto;
+    padding: 0px 10px 10px 10px;
 }
 
 .navbar__menu li {
     display: inline-block;
     margin: 10px 10px;
+    flex: 0 1 auto;
 }
 
 .navbar__menu .menu__link {
@@ -93,15 +99,15 @@ section {
     transition: ease 0.3s all;
 }
 .burger {
-    width: 30px;
+    min-width: 30px;
     height: 30px;
     border: 2px solid #000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 0 0 30px;
-    margin-top: 5px;
+    flex: 0 01 30px;
+    margin: 5px auto;
 }
 
 .burger .burger__line {
@@ -110,7 +116,6 @@ section {
     background-color: #000;
     margin: 2px 0px;
 } 
-
 
 /* Header Styles */
 .page__header {
@@ -250,4 +255,10 @@ section.your-active-class .landing__container::after {
 		           translate(-1em) 
 		           rotate(-360deg);
 	}
+}
+
+
+/*TODO: bring up*/
+.navbar__item.togtest {
+    display: none;
 }
