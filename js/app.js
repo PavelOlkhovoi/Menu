@@ -1,4 +1,30 @@
-let testGlobal = '18 999 9999';
+let testSection = document.getElementsByTagName('section');
+let testNav = document.querySelectorAll('.navbar__item');
+
+
+navbarList.addEventListener('click', ScrollToParent);
+
+
+
+function ScrollToParent(e){
+  e.preventDefault();
+  let relatedSectionId = e.target.dataset.target;
+  if(e.target.tagName.toLowerCase() === 'a') {
+    let relatedSection = document.querySelector(`section[data-nav="Section ${relatedSectionId}"]`);
+    scrollParams(getTopOffset(relatedSection));
+  }
+}
+
+
+function scrollParams(offsetTop){
+  let currentScrollPosition = document.documentElement.scrollTop;
+  window.scrollBy({
+    top: offsetTop - 40 - window.pageYOffset,
+    left: 0,
+    behavior: 'smooth'
+  });
+
+}
 
 /**
  * 

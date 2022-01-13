@@ -1,8 +1,9 @@
 let navbarList = document.querySelector('#navbar__list');
 let navbarListWidth = parseInt(window.getComputedStyle(navbarList).width);
 let navItems = document.getElementsByClassName('navbar__item');
+let items = document.getElementsByClassName('navbar__item');
 
-buildActualMenu();
+// buildActualMenu();
 
 window.addEventListener('resize', buildActualMenu);
 
@@ -13,13 +14,13 @@ function buildActualMenu(){
     let burgerNavItems = []; 
     let cover = document.querySelector('#navbar__list');
     let coverW = getComputedStyle(cover).width;
-    let items = document.getElementsByClassName('navbar__item');
+    // let items = document.getElementsByClassName('navbar__item');
     let currentSum = 0;
 
 
     for(let item of items) {
         currentSum += getRealWidthsOfElement(item);
-        if(parseInt(coverW) * 2 - 60 < currentSum){
+        if(parseInt(coverW) * 2 - 200 < currentSum){
             item.classList.add('togtest');
             console.log('push');
             burgerNavItems.push(item.textContent);
@@ -38,20 +39,6 @@ function clearActualMenu(){
     }
 }
 
-// Use to get the width of HTML element with margins
-// Argument is a DOM Element.
-function getRealWidthsOfElement(element){
-    let width = 0;
-    let elementComputedStyle = window.getComputedStyle(element);
-
-    width += parseInt(elementComputedStyle.width);
-    width += parseInt(elementComputedStyle.marginRight);
-    width += parseInt(elementComputedStyle.marginLeft);
-    width += parseInt(elementComputedStyle.borderLeftWidth);
-    width += parseInt(elementComputedStyle.borderRightWidth);
-
-    return width;
-}
 
 
 // function getArrayWidthsOfInternalElement(element){
