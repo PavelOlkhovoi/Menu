@@ -1,5 +1,4 @@
-let testSection = document.getElementsByTagName('section');
-let testNav = document.querySelectorAll('.navbar__item');
+let section = document.getElementsByTagName('section');
 
 
 navbarList.addEventListener('click', ScrollToParent);
@@ -13,6 +12,9 @@ function ScrollToParent(e){
     let relatedSection = document.querySelector(`section[data-nav="Section ${relatedSectionId}"]`);
     scrollParams(getTopOffset(relatedSection));
   }
+
+  toggleActiveClass(e.target);
+  placeOfMenu(e.target);
 }
 
 

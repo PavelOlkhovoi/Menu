@@ -2,20 +2,16 @@ const random = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-// Use to get the width of HTML element with margins
-// Argument is a DOM Element.
 function getRealWidthsOfElement(element){
-    console.log('Work in Math');
     let width = 0;
     let elementComputedStyle = window.getComputedStyle(element);
 
-    width += parseInt(elementComputedStyle.width);
+
+    width += element.getBoundingClientRect().width;
     width += parseInt(elementComputedStyle.marginRight);
     width += parseInt(elementComputedStyle.marginLeft);
     width += parseInt(elementComputedStyle.borderLeftWidth);
     width += parseInt(elementComputedStyle.borderRightWidth);
-
     return width;
 }
 

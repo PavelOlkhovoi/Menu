@@ -5,7 +5,7 @@ let [title, nounForItem] = titleRendom();
 let mainTag = document.querySelector('main');
 let dataNavCounter = 3;
 
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 12; i++) {
     let renderSection = generateFakeSection();
     mainTag.insertAdjacentElement('beforeend', renderSection);
 }
