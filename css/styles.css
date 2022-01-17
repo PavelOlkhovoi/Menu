@@ -261,11 +261,6 @@ section.your-active-class .landing__container::after {
 }
 
 
-/*TODO: bring up*/
-/* .navbar__item.togtest {
-    display: none;
-} */
-
 .active {
     color: #cc1;
 }
