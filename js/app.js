@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function(){
       targetLink.style.color = 'gold';
       if(targetLink.parentNode.classList.contains('burger-link')){
         burger.style.backgroundColor = 'gold';
+        placeOfMenu(targetLink);
       }else {
         burger.style.backgroundColor = 'transparent';
+        placeOfMenu(targetLink);
       }
 
       for(let link of links){
@@ -116,7 +118,8 @@ document.addEventListener('DOMContentLoaded', function(){
   // The function controls the distribution of space by click
   function placeOfMenu(linkElem){
     clearClones();
-    if(linkElem.tagName.toLowerCase() === 'a'){
+    // TODO ---- CLEAN HERE
+    if(linkElem.tagName.toLowerCase() === 'a' && linkElem.dataset.target != 1){
         let itemLink = linkElem.closest('li');
         let clone = itemLink.cloneNode(true);
         clone.classList.add('clone');
