@@ -41,6 +41,40 @@ document.addEventListener('DOMContentLoaded', function(){
    
   // Scroll site from menu to section
    navbarList.addEventListener('click', ScrollToParent);
+
+
+
+   window.addEventListener('scroll', function() {
+    let coverSection = document.querySelector('main');
+    
+    for(let section of sectionAll){
+    let sectionTopOffset = section.offsetTop;
+        
+
+    if(window.pageYOffset >= sectionTopOffset - 200) {
+      let targetLink = document.querySelector(`a[data-target="${section.dataset.nav}"]`);
+      section.classList.add('section-active');
+      targetLink.style.color = 'gold';
+      if(targetLink.parentNode.classList.contains('burger-link')){
+        burger.style.backgroundColor = 'gold';
+      }else {
+        burger.style.backgroundColor = 'transparent';
+      }
+
+      for(let link of links){
+        if(link.dataset.target !== section.dataset.nav && link.parentNode.classList.contains('burger-link')){
+            link.style.color = 'white';
+
+        }else if (link.dataset.target !== section.dataset.nav){
+          link.style.color = 'black';
+        }
+      }
+      
+    }else{
+      section.classList.remove('section-active');
+    }
+    }
+  });
   
   
   
@@ -59,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // Preparing and launching the scrolling function from Burger links
     if(e.target.tagName.toLowerCase() === 'a') {
         let relatedSectionId = e.target.dataset.target;
-        let relatedSection = document.querySelector(`section[data-nav="Section ${relatedSectionId}"]`);
+        let relatedSection = document.querySelector(`section[data-nav="${relatedSectionId}"]`);
         scrollParams(getTopOffset(relatedSection));
     }
   
@@ -102,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function(){
   
         if(item.classList.contains('link-from-burger')){
             navbarList.removeChild(item);
-            item.style.backgroundColor = "green";
         }
     }
   
@@ -196,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let section = manufactureHTML('section', 'fake-section', null, "name", dataNameValue);
     let sectionContainer = manufactureHTML('div', 'landing__container');
   
-    section.setAttribute(`data-nav`, `Section ${newDataCaunter}`);
+    section.setAttribute(`data-nav`, newDataCaunter);
     dataNavCounter++;
   
     mergeTags(section, sectionContainer);
@@ -236,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function(){
     e.preventDefault();
     let relatedSectionId = e.target.dataset.target;
     if(e.target.tagName.toLowerCase() === 'a') {
-      let relatedSection = document.querySelector(`section[data-nav="Section ${relatedSectionId}"]`);
+      let relatedSection = document.querySelector(`section[data-nav="${relatedSectionId}"]`);
       scrollParams(getTopOffset(relatedSection));
     }
   

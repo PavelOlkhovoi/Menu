@@ -18,6 +18,9 @@ body {
     color: #fff;
 }
 
+li {
+    list-style: none;
+}
 
 /* Typeography General*/
 h1 {
@@ -99,8 +102,7 @@ section {
     transition: ease 0.3s all;
 }
 .burger {
-    /* display: none; */
-    /* display: block; */
+
     min-width: 30px;
     height: 30px;
     border: 2px solid #000;
@@ -110,7 +112,7 @@ section {
     justify-content: center;
     flex: 0 1 30px;
     margin: 5px auto;
-    z-index: 2222230;
+    z-index: 22;
 }
 
 .burger .burger__line {
@@ -288,6 +290,8 @@ section.your-active-class .landing__container::after {
     height: 400px;
     color: wheat;
     z-index: 20;
+    padding-left: 0;
+    overflow: auto;
 }
 
 .overlay-active {
@@ -303,4 +307,22 @@ section.your-active-class .landing__container::after {
 }
 .navbar__menu li.temporary-disable {
     display: none;
+}
+
+/* Active class for a section */ 
+
+.section-active .landing__container h2 {
+    color: #cc1;
+    /* background: #cc1; */
+}
+
+.overlay__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.overlay__close svg {
+    fill: #eee;
+    width: 40px;
 }
