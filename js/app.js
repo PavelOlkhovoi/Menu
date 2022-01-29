@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
    navbarList.addEventListener('click', ScrollToParent);
 
 
-
+  // Control active sections by scrolling
    window.addEventListener('scroll', function() {
     let coverSection = document.querySelector('main');
     
@@ -201,8 +201,6 @@ document.addEventListener('DOMContentLoaded', function(){
   
   
   // Generates random functions
-  
-  
   function renderNav(){
     let docFragment = document.createDocumentFragment();
     let counterSection = 1;
@@ -264,7 +262,6 @@ document.addEventListener('DOMContentLoaded', function(){
   
   
    // Scroll functions
-  
   function ScrollToParent(e){
     e.preventDefault();
     let relatedSectionId = e.target.dataset.target;
@@ -292,7 +289,6 @@ document.addEventListener('DOMContentLoaded', function(){
   
   
   // Math f-s
-  
   function random(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
