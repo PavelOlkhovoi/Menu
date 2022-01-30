@@ -13,11 +13,9 @@ document.addEventListener('DOMContentLoaded', function(){
   //Amount of original sections (with real contents)
   let dataNavCounter = 3;
 
-  // Generate testing sections
-  for (let i = 0; i < 12; i++) {
-    let renderSection = generateFakeSection();
-    mainTag.insertAdjacentElement('beforeend', renderSection);
-  }
+
+  // Enter the number of fake sections
+  numberOfSection(12);
 
   // Insert links in header menu
   renderNav();
@@ -300,6 +298,14 @@ document.addEventListener('DOMContentLoaded', function(){
   
   function getTopOffset(element){
     return element.offsetTop;
+  }
+
+  // Create the exact number of fake sections
+  function numberOfSection(number){
+    for (let i = 0; i < number; i++) {
+      let renderSection = generateFakeSection();
+      mainTag.insertAdjacentElement('beforeend', renderSection);
+    }
   }
   
   function titleRendom(){
