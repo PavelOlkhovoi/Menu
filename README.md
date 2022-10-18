@@ -1,5 +1,6 @@
 # Landing Page Project
 > I have created this project to improve my knowledge of how to dynamically work with DOM.
+> Live demo [_here_](https://pavelolkhovoi.github.io/menu/).
 
 
 ## Automatic menu generation
